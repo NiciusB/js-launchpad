@@ -135,13 +135,8 @@ async function updateColors () {
   }
 
   oldButtons = newButtons
-  if (Math.random() < 0.2) setTimeout(updateColors, 10)
-  else window.postMessage('updateColors', updateColors)
+  setTimeout(updateColors, 0)
 }
-
-window.addEventListener('message', e => {
-  updateColors()
-}, false)
 
 window.addEventListener('beforeunload', () => {
   pad.reset()
